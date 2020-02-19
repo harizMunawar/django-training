@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Login</title>
+{% endblock title %}
+
+{% block customCSS %}
+    <link rel="stylesheet" type="text/css" href="{%static 'login/css/style.css'%}">
+{% endblock customCSS %}
+
+{% block content %}
+    <div class="form-group wadahForm">
+        <center style="padding: 24px;">
+            <form action="/login/" method="POST">
+                {% csrf_token %}
+                {% for field in form %}
+                    {{ field.label_tag }}<br>
+                    {{ field }}<br><br>                    
+                {% endfor %}
+                <input type="submit" class="btn btn-primary" value="LOGIN" required>
+            </form>
+        </center>
+    </div>
+{% endblock content %}

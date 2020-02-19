@@ -1,0 +1,29 @@
+body{
+    font-family: product sans;
+}
+.sidebar{
+    background: rgb(64, 143, 71);
+    width: 20%;                
+    height: 100vh;
+    color: white;
+    position: absolute;
+}
+.btn{
+    background: rgb(64, 143, 71);
+    border-style: none;
+    color: white;
+    font-size: 20px;
+}
+.btn:hover{
+    background: rgb(47, 122, 53);
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    font-family: product sans;
+    color: white;
+}
+div{
+    margin-top: -8px;
+    margin-left: -8px;
+}

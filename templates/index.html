@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Index</title>
+{% endblock title %}
+
+{% block customCSS %}
+    <link rel="stylesheet" type="text/css" href="{%static 'css/style.css'%}">
+{% endblock customCSS %}
+
+{% block content %}
+    <div class="form-group wadahForm">
+        <center style="padding: 24px;">
+            <form action="" method="">
+                <h1>PLEASE CHOOSE ONE</h1><br><br>
+
+                <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href="login/">LOGIN</a></button>
+                <button type="submit" class="btn btn-primary"><a style="color: white; text-decoration: none;" href="signup/">SIGN UP</a></button>
+            </form>
+        </center>
+    </div>
+{% endblock content %}

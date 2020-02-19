@@ -1,0 +1,18 @@
+{% include 'base.html' %}
+{%load static%}
+
+{% block title %}
+    <title>Home -> {{judul}}</title>
+{% endblock title %}
+
+{% block customCSS %}
+    <link rel="stylesheet" type="text/css" href="{%static linkCSS%}">
+{% endblock customCSS %}
+
+{% block content %}
+    {% include 'snippets/navbar.html' %}
+
+    <div style="float: right;">
+        <img src="{%static linkImage %}" style="width: 100%;">
+    </div>
+{% endblock content %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{%load static%}
+
+{% block title %}
+    <title>HOME</title>
+{% endblock title %}
+
+{% block customCSS %}
+    <link rel="stylesheet" type="text/css" href="{%static 'home/css/style.css'%}">
+{% endblock customCSS %}
+
+{% block content %}
+    {% include 'snippets/navbar.html' %}
+    <div class="container-fluid" style="padding: 0;">
+        <img src="{%static 'img/banner_home.png'%}" style="width: 100%;">
+    </div>
+    <br><br><br>
+
+    <div class="container-fluid" style="margin: 24px;">
+        <div class="row" style="margin:24px;">
+            {% for Menu in Menu %}
+                <div class="col-md-6-12" style="margin:12px;">
+                    <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">{{Menu.menu_name}}</h3>
+                        <img src={{Menu.image.url}} class="card-img" style="width:250px; height:250px;">
+                        <p class="card-text">Rp.{{Menu.price}}</p>
+                    </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+{% endblock content %}
