@@ -1,14 +1,21 @@
 from django.shortcuts import render
+from django.core.paginator import Paginator
 from .models import menu
 
 def index(request):
     Menu = menu.objects.all()
+    paginator = Paginator(Menu, 4)
+    page = request.GET.get('page', 1)
+
+    pagination = paginator.page(page)
     context = {
         'nav' : [
             ['contact/', 'Contact'],
             ['detail/', 'Detail'],
         ],
         'Menu' : Menu,
+        'pagination' : pagination,
+        'page' : page,
     }
     return render(request, 'home/index.html', context)
 

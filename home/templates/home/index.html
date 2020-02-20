@@ -18,17 +18,36 @@
 
     <div class="container-fluid" style="margin: 24px;">
         <div class="row">
-            {% for Menu in Menu %} 
-                <div class="col-md-3-12" style="margin: 12px;">
+            {% for Menu in pagination %} 
+                <div class="col-md-3-12" style="margin: 0.5%;margin-right: 3.5%">
                     <div class="card" style="width: 300px; height: 375px;">
                         <div class="card-body">
                             <h3 class="card-title">{{Menu.menu_name}}</h3>
-                            <img src={{Menu.image.url}} class="card-img" style="width:250px; height:250px;">
+                            <a href={{Menu.image.url}}><img src={{Menu.image.url}} class="card-img" style="width:250px; height:250px;"></a>
                             <p class="card-text">Rp.{{Menu.price}}</p>
                         </div>
                     </div>
                 </div>
             {% endfor %}
+        </div>
+        
+        <div class="row">
+            <ul class="pagination">
+                {% if pagination.has_previous %}                
+                    <li class="page-item"><a class="page-link" href="?page={{ pagination.previous_page_number }}">Previous</a></li>                
+                {% endif %}            
+                {% for page_obj in pagination.paginator.page_range  %}
+                    {% if pagination.number == page_obj %}
+                        <li class="page-item active"><a class="page-link" href="?page={{page_obj}}">{{page_obj}}</a></li>     
+                    {% else %}
+                        <li class="page-item"><a class="page-link" href="?page={{page_obj}}">{{page_obj}}</a></li>     
+                    {% endif %}
+                    
+                {% endfor %}
+                {% if pagination.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ pagination.next_page_number }}">Next</a></li>
+                {% endif %}
+            </ul>
         </div>
     </div>
     
