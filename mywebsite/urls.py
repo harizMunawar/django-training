@@ -8,6 +8,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),
     path('home/', include('home.urls')),
-    path('login/', include('login.urls')),
+    path('login/', include('login.urls'), name="login"),
     path('signup/', include('signup.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
