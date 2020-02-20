@@ -1,5 +1,7 @@
 from django.contrib import admin
-
 from . import models
 
-admin.site.register(models.menu)
+class menuAdmin(admin.ModelAdmin):
+    readonly_fields = ['slug']
+
+admin.site.register(models.menu, menuAdmin)

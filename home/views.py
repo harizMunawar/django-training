@@ -36,3 +36,14 @@ def detail(request):
         'linkCSS' : 'home/css/style.css',
     }
     return render(request, 'home/navbarURL.html', context)
+
+def menumartabak(request, inputSlug):    
+    selectedMenu = menu.objects.get(slug = inputSlug)
+    context = {
+        'selectedImage' : selectedMenu.image.url,
+        'selectedMartabak' : selectedMenu.menu_name,
+        'selectedPrice' : selectedMenu.price,
+        'slug_name' : inputSlug,
+    }
+    
+    return render(request, 'home/martabak.html', context)

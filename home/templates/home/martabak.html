@@ -1,0 +1,24 @@
+{% include 'base.html' %}
+{%load static%}
+
+{% block title %}
+    <title>{{slug_name}}</title>
+{% endblock title %}
+
+{% block customCSS %}
+    <link rel="stylesheet" type="text/css" href="{%static linkCSS%}">
+{% endblock customCSS %}
+
+{% block content %}
+    {% include 'snippets/navbar.html' %}
+    <div class="jumbotron jumbotron-fluid" style="background-image: url({{selectedImage}});">
+        <div class="container">
+            <h1 class="display-3">{{selectedMartabak}}</h1>
+            <p class="lead">{{selectedPrice}}</p>
+            <hr class="my-2">
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Pesan</a>
+            </p>
+        </div>
+    </div>
+{% endblock content %}
