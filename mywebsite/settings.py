@@ -25,7 +25,7 @@ SECRET_KEY = 'hi36ttjpnplxk7%!mn(rs%m_+^s#fa6)ew2*r@dv0207ug6euc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['munawar.pythonanywhere.com']
 
 
 # Application definition
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'mywebsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'mywebsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'djangoproject',
-        'USER' : 'root',
-        'PASSWORD' : '',
-        'HOST' : 'localhost',
-        'PORT' : '3306',
+        'NAME': 'Munawar$djangoproject',
+        'USER' : 'Munawar',
+        'PASSWORD' : 'adminmunawar134',
+        'HOST' : 'Munawar.mysql.pythonanywhere-services.com',
+        'PORT' : '',
     }
 }
 
@@ -125,10 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+STATIC_ROOT = '/home/Munawar/django-training/static'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

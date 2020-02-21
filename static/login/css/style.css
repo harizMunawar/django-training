@@ -1,0 +1,35 @@
+body{
+    background: rgb(64, 143, 71);
+    font-family: product sans; 
+    color: rgb(47, 122, 53);               
+}
+h1, p{
+    color: rgb(64, 143, 71);
+}
+input{
+    font-family: product sans;
+    font-size: 15px;
+}
+.btn{
+    background: rgb(64, 143, 71);
+    border-style: none;
+    color: white;
+    font-size: 20px;
+}
+.btn:hover{
+    background: rgb(47, 122, 53);
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    padding: 6px;
+}
+form, label{
+    color: rgb(47, 122, 53);
+}
+.wadahForm{
+    width: 30%; 
+    height: 50%;
+    background: white; 
+    margin: 10% 35% 0px;
+}
