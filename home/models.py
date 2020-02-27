@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
 from django.contrib.contenttypes.fields import GenericRelation
-from django.contrib.contenttypes.models import Rating
 
 class menu(models.Model):
     menu_name = models.CharField(max_length=50)
