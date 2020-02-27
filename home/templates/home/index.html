@@ -12,7 +12,7 @@
 
 {% block content %}
     {% include 'snippets/navbar.html' %}
-
+    
     <div class="container-fluid" style="margin: 24px;">
         <div class="row">
             {% for Menu in pagination %} 
@@ -22,6 +22,7 @@
                             <h3 class="card-title">{{Menu.menu_name}}</h3>
                             <a href="{{Menu.slug}}"><img src={{Menu.image.url}} class="card-img" style="width:250px; height:250px;"></a>
                             <p class="card-text">Rp.{{Menu.price}}</p>
+                            <h1>{{ object.bar }}</h1>
                             <span>{% ratings object %}</span>
                         </div>
                     </div>
