@@ -39,13 +39,11 @@ def detail(request):
 
 def menumartabak(request, inputSlug):    
     selectedMenu = menu.objects.get(slug = inputSlug)
-    queryset = menu.objects.get(slug = inputSlug).filter(ratings__isnull=False).order_by('ratings__average')
     context = {
         'selectedImage' : selectedMenu.image.url,
         'selectedMartabak' : selectedMenu.menu_name,
         'selectedPrice' : selectedMenu.price,
         'slug_name' : inputSlug,
-        "object_list": queryset,
     }
     
     return render(request, 'home/martabak.html', context)
