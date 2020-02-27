@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% extends 'star_ratings/widget_base.html'%}
 {%load static%}
 
 {% block title %}
@@ -21,7 +22,9 @@
                             <h3 class="card-title">{{Menu.menu_name}}</h3>
                             <a href="{{Menu.slug}}"><img src={{Menu.image.url}} class="card-img" style="width:250px; height:250px;"></a>
                             <p class="card-text">Rp.{{Menu.price}}</p>
-                            <span id="rateMe4"  class="feedback"></span>
+                            {% block rating_container %}
+                                
+                            {% endblock rating_container %}
                         </div>
                     </div>
                 </div>
