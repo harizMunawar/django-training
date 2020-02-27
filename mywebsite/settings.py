@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'home',
     'login',
     'signup',
+    'star_ratings',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +69,10 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+TEMPLATE_CONTEXT_PROCESSORS = [
+    'django.core.context_processors.request',
 ]
 
 WSGI_APPLICATION = 'mywebsite.wsgi.application'
@@ -130,3 +135,6 @@ STATIC_ROOT = '/home/Munawar/django-training/static'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 LOGIN_URL = '/login/'
+
+#rating ratingan bos
+STAR_RATINGS_RERATE = False
