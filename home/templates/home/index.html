@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {%load static%}
-{% load ratings %}
 
 {% block title %}
     <title>HOME</title>
@@ -22,7 +21,6 @@
                             <h3 class="card-title">{{Menu.menu_name}}</h3>
                             <a href="{{Menu.slug}}"><img src={{Menu.image.url}} class="card-img" style="width:250px; height:250px;"></a>
                             <p class="card-text">Rp.{{Menu.price}}</p>
-                            {% ratings object %}
                             <span id="rateMe4"  class="feedback"></span>
                         </div>
                     </div>
