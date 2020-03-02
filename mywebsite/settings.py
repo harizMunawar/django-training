@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'login',
     'signup',
     'star_ratings',
-    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -136,11 +135,3 @@ LOGIN_URL = '/login/'
 
 #rating ratingan bos
 STAR_RATINGS_RERATE = False
-
-REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
-}
