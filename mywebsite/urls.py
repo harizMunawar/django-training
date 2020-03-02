@@ -7,8 +7,9 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),
+    path('api-auth/', include('rest_frameworks.urls')),
     path('home/', include('home.urls')),
     path('login/', include('login.urls'), name="login"),
     path('signup/', include('signup.urls')),
-    path('api-auth/', include('rest_frameworks.urls')),
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
