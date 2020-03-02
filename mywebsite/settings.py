@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'login',
     'signup',
     'star_ratings',
-    'rest_frameworks',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
