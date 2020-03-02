@@ -13,18 +13,16 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         model = User
         fields = ['url', 'username', 'email', 'is_staff']
 
-# ViewSets define the view behavior.
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-# Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls), name="index"),
+    path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls')),
     path('home/', include('home.urls')),
     path('login/', include('login.urls'), name="login"),
